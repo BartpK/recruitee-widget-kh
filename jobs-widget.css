@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+#widgetbody {
+    display: grid;
+    grid-template-rows: 100px auto;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+#departmentscontainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.departmentbutton {
+    margin:0.5em;
+    background: none;
+    border: none;
+    font-size: 1em;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.departmentbutton::after {
+    content: ' ';
+    display:block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+}
+
+.departmentbutton:hover:after {
+    width: 100%;
+    background: black
+  }
+
+#jobscontainer {
+    
+    display: grid;
+    grid-template-columns: repeat(3,1fr)
+}
+
+.jobDiv {
+    text-align: center;
+    width: 80%;
+    height: 80%;
+    padding: 10px;
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 20px;    
+    margin: 0 auto;
+    transition: color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.jobDiv:hover {
+    color:white;    
+}
+
+.jobDiv:hover:nth-child(3n+1) {
+    background-color: #f39b9a;    
+}
+
+.jobDiv:hover:nth-child(3n+2) {
+    background-color: #9acfae;    
+}
+
+.jobDiv:hover:nth-child(3n+3) {
+    background-color: #047083;    
+}
+
+h4, p {
+    font-family: 'Poppins', sans-serif;   
+}
+
+h4 {
+    font-size: 1.8em;
+    margin-top: 2em;
+}
+
+.jobTitle, .jobLocation, .jobDepartments {
+    padding: 10px;
+}
+
+.jobDepartments {
+    font-size: 1.1em;
+    text-transform: capitalize;    
+}
+
+.jobLocation {
+    margin-top: 3em;
+    font-size: 1em;
+    text-transform: capitalize;
+}
+
+.jobDepartments, .jobLocation {
+    grid-row: 2/2;
+    grid-column: 1/1;
+}
+
+
+@media (max-width: 1025px) {
+    #jobscontainer {    
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 968px) {
+    #jobscontainer {
+        grid-template-columns: 1fr;
+    }
+}
